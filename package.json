@@ -1,6 +1,6 @@
 {
   "name": "react-redux-starter-kit",
-  "version": "3.0.1",
+  "version": "1.0.0",
   "description": "Get started with React, Redux, and React-Router!",
   "main": "index.js",
   "scripts": {
@@ -15,9 +15,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/davezuko/react-redux-starter-kit.git"
+    "url": "https://github.com/KmKm007/react-redux-starter-kit.git"
   },
-  "author": "David Zukowski <david@zuko.me> (http://zuko.me)",
+  "author": "KmKm",
   "license": "MIT",
   "dependencies": {
     "compression": "^1.6.2",

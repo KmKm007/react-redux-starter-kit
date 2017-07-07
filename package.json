@@ -23,7 +23,7 @@
     "compression": "^1.6.2",
     "express": "^4.14.0",
     "history": "^4.6.3",
-    "kmkm-utils": "^1.0.5",
+    "kmkm-utils": "^1.0.10",
     "object-assign": "^4.1.1",
     "promise": "^7.1.1",
     "prop-types": "^15.5.10",

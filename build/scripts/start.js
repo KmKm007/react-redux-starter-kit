@@ -5,7 +5,7 @@ const PORT = 3000
 logger.info('Starting server...')
 require('../../server/main').listen(PORT, () => {
   logger.success(`Server is running at http://localhost:${PORT}`)
-  logger.success(`Server also run at http://${getIPAdress()}:${PORT}`)
+  logger.success(`Server is also running at http://${getIPAdress()}:${PORT}`)
 })
 
 function getIPAdress() {

@@ -122,7 +122,39 @@ config.module.rules.push({
 const extractStyles = new ExtractTextPlugin({
   filename: 'styles/[name].[contenthash].css',
   allChunks: true,
-  disable: __DEV__,
+  disable: __DEV__
+})
+
+const baseStyleLoader = {
+  loader: 'css-loader',
+  options: {
+    sourceMap: project.sourcemaps,
+    minimize: {
+      autoprefixer: {
+        add: true,
+        remove: true,
+        browsers: ['last 2 versions'],
+      },
+      discardComments: {
+        removeAll : true,
+      },
+      discardUnused: false,
+      mergeIdents: false,
+      reduceIdents: false,
+      safe: true,
+      sourcemap: project.sourcemaps,
+    },
+  },
+}
+
+config.module.rules.push({
+  test: /\.(css)$/,
+  loader: extractStyles.extract({
+    fallback: 'style-loader',
+    use: [
+      baseStyleLoader
+    ]
+  })
 })
 
 config.module.rules.push({
@@ -130,27 +162,7 @@ config.module.rules.push({
   loader: extractStyles.extract({
     fallback: 'style-loader',
     use: [
-      {
-        loader: 'css-loader',
-        options: {
-          sourceMap: project.sourcemaps,
-          minimize: {
-            autoprefixer: {
-              add: true,
-              remove: true,
-              browsers: ['last 2 versions'],
-            },
-            discardComments: {
-              removeAll : true,
-            },
-            discardUnused: false,
-            mergeIdents: false,
-            reduceIdents: false,
-            safe: true,
-            sourcemap: project.sourcemaps,
-          },
-        },
-      },
+      baseStyleLoader,
       {
         loader: 'sass-loader',
         options: {
